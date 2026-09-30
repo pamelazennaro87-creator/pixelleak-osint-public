@@ -1,12 +1,19 @@
-# Status — v2.0 international dataset
+# Status — v2.1 structured dataset
 
 **Public URL:** https://github.com/pamelazennaro87-creator/pixelleak-osint-public
 
 | Metric | Value |
 |--------|-------|
 | Cases | **15** |
-| Years | 2025–2026 |
-| Scope | International AI-agent exposure OSINT |
-| Policy | Fingerprint only — no stolen payloads |
+| Machine index | `indexes/cases.csv` |
+| Indicators | IND-001 … IND-020 |
+| Graph | Updated relationships |
+| Executive brief | `analysis/executive-brief.md` |
+| Template + recheck | `methodology/` |
+| Policy | Fingerprint only |
 
-Start: [`cases/INDEX.md`](cases/INDEX.md)
+## Start
+
+1. [`analysis/executive-brief.md`](analysis/executive-brief.md)  
+2. [`cases/INDEX.md`](cases/INDEX.md)  
+3. [`indexes/cases.csv`](indexes/cases.csv)  
