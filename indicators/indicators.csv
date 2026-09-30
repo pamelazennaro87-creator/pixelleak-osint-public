@@ -1,0 +1,11 @@
+indicator_id,type,value,case_ids,status,notes
+IND-001,tool,gitshot,PL-2026-0001,OBSERVED,https://github.com/vipulgupta2048/gitshot — public-by-default image hosting
+IND-002,pattern,<user>/gitshot-images,PL-2026-0001,OBSERVED,Default personal public repo name pattern (tool docs)
+IND-003,pattern,_gitshot tag / release assets,PL-2026-0001,REPORTED,Glow; downloadable release-style assets
+IND-004,repo_path,sweeper-demo/pr-assets,PL-2026-0001,REMOVED,Lab locator 404 as of 2026-09-30
+IND-005,product,GitHub Agentic Workflows,PL-2026-0002,OBSERVED,Surface for GitLost
+IND-006,product,GitHub MCP server,PL-2025-0001,OBSERVED,https://invariantlabs.ai/blog/mcp-github-vulnerability
+IND-007,product,GitHub Copilot + Codespaces,PL-2026-0003,OBSERVED,RoguePilot chain surface
+IND-008,product,anthropics/claude-code-action,PL-2026-0004,OBSERVED,CI agent action class
+IND-009,pattern,public issue body as agent instruction source,PL-2025-0001;PL-2026-0002;PL-2026-0003;PL-2026-0004,OBSERVED,Shared toxic input class
+IND-010,gap,No CLI image-attach API for private PR media,PL-2026-0001,OBSERVED,Root workaround driver (docs + research)
