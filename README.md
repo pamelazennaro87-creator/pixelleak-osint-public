@@ -4,18 +4,24 @@
 
 > *Preserve the fingerprint, not the stolen payload.*
 
-**15 cases · 2025–2026 · structured CSV/graph · public sources only**
+**15 cases · CLAIMS on all · CSV/graph · consultable web page**
+
+## Web UI
+
+- **Page file:** [`docs/index.html`](docs/index.html) (open in browser)
+- **GitHub Pages:** enable Settings → Pages → `/docs`  
+  → `https://pamelazennaro87-creator.github.io/pixelleak-osint-public/`
 
 ## Start here
 
 | Role | Link |
 |------|------|
-| **Executive / portfolio** | [`analysis/executive-brief.md`](analysis/executive-brief.md) |
+| **Interactive page** | [`docs/index.html`](docs/index.html) |
+| **Executive brief** | [`analysis/executive-brief.md`](analysis/executive-brief.md) |
 | **All cases** | [`cases/INDEX.md`](cases/INDEX.md) |
 | **Machine table** | [`indexes/cases.csv`](indexes/cases.csv) |
 | **Mechanisms** | [`analysis/mechanism-matrix.md`](analysis/mechanism-matrix.md) |
 | **Fingerprints** | [`indicators/indicators.csv`](indicators/indicators.csv) |
-| **Full map** | [`indexes/master-index.md`](indexes/master-index.md) |
 
 ## Case families
 
@@ -39,7 +45,7 @@ untrusted or unconstrained agent context
 
 ## Policy
 
-[`SCOPE.md`](SCOPE.md) · [`STATUS.md`](STATUS.md) · [`methodology/`](methodology/)
+[`SCOPE.md`](SCOPE.md) · [`STATUS.md`](STATUS.md)
 
 ---
-*v2.1 structured international OSINT portfolio*
+*v2.2 complete international OSINT portfolio + UI*
