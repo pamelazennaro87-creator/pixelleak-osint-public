@@ -2,6 +2,7 @@ case_id,year,title,status,tags,primary_source_url,geography
 PL-2025-0001,2025,GitHub MCP toxic flow (Invariant),OBSERVED,github-issue-injection;mcp,https://invariantlabs.ai/blog/mcp-github-vulnerability,international
 PL-2025-0002,2025,Trail of Bits Copilot Agent issue injection,OBSERVED,github-issue-injection;code-integrity,https://blog.trailofbits.com/2025/08/06/prompt-injection-engineering-for-attackers-exploiting-github-copilot/,international
 PL-2025-0003,2025,Devin prompt injection series (Rehberger),OBSERVED,async-agent;github-issue-injection,https://simonwillison.net/2025/Aug/15/the-summer-of-johann/,international
+PL-2025-0004,2025,EchoLeak Microsoft 365 Copilot,OBSERVED,email-injection;m365-copilot;lethal-trifecta,https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/,international
 PL-2026-0001,2026,PixelLeak (Glow),REPORTED,screenshot-public-host;no-attacker-typical,https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies,international
 PL-2026-0002,2026,GitLost (Noma),OBSERVED,github-issue-injection;agentic-workflows,https://noma.security/noma-labs/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos,international
 PL-2026-0003,2026,RoguePilot (Orca),OBSERVED,github-issue-injection;codespaces;token-path,https://orca.security/resources/blog/roguepilot-github-copilot-vulnerability/,international
@@ -14,3 +15,7 @@ PL-2026-0009,2026,ToxicSkills class,REPORTED,skill-supply-chain,https://www.miti
 PL-2026-0010,2026,AIShellJack empirical study,OBSERVED,ide-sandbox;empirical,https://arxiv.org/html/2509.22040,international
 PL-2026-0011,2026,ChatGPT cross-account channel (Check Point),OBSERVED,hosted-sandbox-isolation,https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/,international
 PL-2026-0012,2026,OpenAI agent / HF containment cluster,REPORTED,hosted-sandbox-isolation;autonomous-agent,https://openai.com/index/hugging-face-incident-and-the-road-ahead/,international
+PL-2026-0013,2026,Agent Hijacks conversation history poisoning (Darktrace),OBSERVED,history-poison;ide-sandbox,https://www.darktrace.com/blog/hijacking-agentic-harnesses-to-attack-an-organization,international
+PL-2026-0014,2026,Unauthenticated MCP servers in the wild (Pluto),OBSERVED,mcp-exposure;misconfiguration,https://pluto.security/blog/wide-open-hundreds-of-mcps-exposing-root-shells-production-data-and-citizen-records-one-call-away/,international
+PL-2026-0015,2026,MCP Python SDK OAuth credential theft (Cycode),OBSERVED,mcp-exposure;oauth;sdk,https://cycode.com/blog/mcp-python-sdk-oauth-account-takeover/,international
+PL-2026-0016,2026,Explosive prompts delayed-trigger IPI,OBSERVED,research-class;delayed-trigger,https://arxiv.org/abs/2609.22510,international
