@@ -1,7 +1,23 @@
-# Status
+# Status — v1.1 complete
 
-**Repository:** public  
-**URL:** https://github.com/pamelazennaro87-creator/pixelleak-osint-public  
-**Version:** 1.0 public portfolio
+**Repository:** **public**  
+**URL:** https://github.com/pamelazennaro87-creator/pixelleak-osint-public
 
-Six related cases indexed under `cases/`. Fingerprint-only policy in `SCOPE.md`.
+## Contents
+
+| Area | Status |
+|------|--------|
+| 6 cases | Complete |
+| Sources SRC-0001…0021 | Complete |
+| Timeline | Complete |
+| Indicators + graph | Complete |
+| Methodology (status, schema, correlation) | Complete |
+| Analysis (matrix + defensive checklist) | Complete |
+| False-positive rules | Complete |
+| PixelLeak subcases + claims register | Complete |
+
+## Policy
+
+Fingerprint-only. No credentials or stolen payloads.
+
+Navigation: [`indexes/master-index.md`](indexes/master-index.md)
