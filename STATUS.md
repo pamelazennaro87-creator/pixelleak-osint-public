@@ -1,23 +1,12 @@
-# Status — v1.1 complete
+# Status — v2.0 international dataset
 
-**Repository:** **public**  
-**URL:** https://github.com/pamelazennaro87-creator/pixelleak-osint-public
+**Public URL:** https://github.com/pamelazennaro87-creator/pixelleak-osint-public
 
-## Contents
+| Metric | Value |
+|--------|-------|
+| Cases | **15** |
+| Years | 2025–2026 |
+| Scope | International AI-agent exposure OSINT |
+| Policy | Fingerprint only — no stolen payloads |
 
-| Area | Status |
-|------|--------|
-| 6 cases | Complete |
-| Sources SRC-0001…0021 | Complete |
-| Timeline | Complete |
-| Indicators + graph | Complete |
-| Methodology (status, schema, correlation) | Complete |
-| Analysis (matrix + defensive checklist) | Complete |
-| False-positive rules | Complete |
-| PixelLeak subcases + claims register | Complete |
-
-## Policy
-
-Fingerprint-only. No credentials or stolen payloads.
-
-Navigation: [`indexes/master-index.md`](indexes/master-index.md)
+Start: [`cases/INDEX.md`](cases/INDEX.md)
