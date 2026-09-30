@@ -1,19 +1,17 @@
-# Status — v2.1 structured dataset
+# Status — v2.2 complete + web UI
 
-**Public URL:** https://github.com/pamelazennaro87-creator/pixelleak-osint-public
+**Repo:** https://github.com/pamelazennaro87-creator/pixelleak-osint-public  
+**Page:** [`docs/index.html`](docs/index.html)
 
-| Metric | Value |
-|--------|-------|
-| Cases | **15** |
-| Machine index | `indexes/cases.csv` |
-| Indicators | IND-001 … IND-020 |
-| Graph | Updated relationships |
-| Executive brief | `analysis/executive-brief.md` |
-| Template + recheck | `methodology/` |
+| Item | State |
+|------|--------|
+| 15 cases + CLAIMS on all | Done |
+| cases.csv / indicators / graph | Done |
+| Executive brief | Done |
+| Consultable HTML UI | Done |
 | Policy | Fingerprint only |
 
-## Start
+## Enable GitHub Pages
 
-1. [`analysis/executive-brief.md`](analysis/executive-brief.md)  
-2. [`cases/INDEX.md`](cases/INDEX.md)  
-3. [`indexes/cases.csv`](indexes/cases.csv)  
+Settings → Pages → Branch `main` → folder `/docs`  
+Then: `https://pamelazennaro87-creator.github.io/pixelleak-osint-public/`
