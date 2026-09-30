@@ -7,115 +7,38 @@
   <meta name="description" content="Evidence-first OSINT on AI agent data exposures. Fingerprints only — no stolen payloads." />
   <style>
     :root {
-      --bg: #0b0f14;
-      --panel: #121821;
-      --border: #243041;
-      --text: #e7eef7;
-      --muted: #9aabbf;
-      --accent: #5b9fd4;
-      --ok: #3dba7a;
-      --warn: #d4a017;
-      --tag: #1a2838;
+      --bg: #0b0f14; --panel: #121821; --border: #243041; --text: #e7eef7;
+      --muted: #9aabbf; --accent: #5b9fd4; --ok: #3dba7a; --warn: #d4a017; --tag: #1a2838;
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 1.25rem 1.25rem;
-      background: linear-gradient(180deg, #101820, var(--bg));
-    }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+    header { border-bottom: 1px solid var(--border); padding: 1.5rem 1.25rem 1.25rem; background: linear-gradient(180deg, #101820, var(--bg)); }
     header .wrap, main, footer .wrap { max-width: 1100px; margin: 0 auto; }
     h1 { margin: 0 0 0.35rem; font-size: 1.55rem; letter-spacing: -0.02em; }
-    .principle {
-      color: var(--accent);
-      font-style: italic;
-      margin: 0.5rem 0 0.75rem;
-    }
+    .principle { color: var(--accent); font-style: italic; margin: 0.5rem 0 0.75rem; }
     .meta { color: var(--muted); font-size: 0.92rem; }
-    .stats {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem;
-    }
-    .stat {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.55rem 0.85rem;
-      font-size: 0.88rem;
-    }
+    .stats { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .stat { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 0.55rem 0.85rem; font-size: 0.88rem; }
     .stat strong { color: var(--accent); }
     main { padding: 1.25rem; }
-    .toolbar {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; align-items: center;
-    }
-    input[type="search"] {
-      flex: 1; min-width: 200px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 8px;
-      padding: 0.55rem 0.75rem;
-    }
-    select {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 8px;
-      padding: 0.55rem 0.6rem;
-    }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; align-items: center; }
+    input[type="search"] { flex: 1; min-width: 200px; background: var(--panel); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 0.55rem 0.75rem; }
+    select { background: var(--panel); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 0.55rem 0.6rem; }
     .grid { display: grid; gap: 0.75rem; }
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 0.9rem 1rem;
-    }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 1rem; }
     .card h2 { margin: 0 0 0.35rem; font-size: 1.05rem; }
     .id { color: var(--accent); font-family: ui-monospace, monospace; font-size: 0.82rem; }
     .tags { margin: 0.45rem 0; display: flex; flex-wrap: wrap; gap: 0.35rem; }
-    .tag {
-      background: var(--tag);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 0.12rem 0.55rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-    .status {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 0.1rem 0.45rem;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-    }
+    .tag { background: var(--tag); border: 1px solid var(--border); border-radius: 999px; padding: 0.12rem 0.55rem; font-size: 0.75rem; color: var(--muted); }
+    .status { display: inline-block; font-size: 0.75rem; padding: 0.1rem 0.45rem; border-radius: 6px; border: 1px solid var(--border); }
     .status.OBSERVED { color: var(--ok); }
     .status.REPORTED { color: var(--warn); }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .pattern {
-      background: #0e1520;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.85rem 1rem;
-      font-family: ui-monospace, monospace;
-      font-size: 0.82rem;
-      white-space: pre-wrap;
-      margin: 1rem 0;
-    }
+    .pattern { background: #0e1520; border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; white-space: pre-wrap; margin: 1rem 0; }
     section h3 { margin-top: 1.5rem; margin-bottom: 0.5rem; }
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.25rem;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
+    footer { border-top: 1px solid var(--border); padding: 1.25rem; color: var(--muted); font-size: 0.85rem; }
     .links a { margin-right: 0.85rem; }
-    .hidden { display: none !important; }
   </style>
 </head>
 <body>
@@ -125,14 +48,12 @@
       <p class="principle">“Preserve the fingerprint, not the stolen payload.”</p>
       <p class="meta">Evidence-first international dataset on AI-agent data exposures (2025–2026). No passwords, tokens, or stolen dumps.</p>
       <div class="stats">
-        <div class="stat"><strong id="count">15</strong> cases</div>
-        <div class="stat"><strong>6</strong> mechanism families</div>
-        <div class="stat"><strong>IND-020</strong> indicators</div>
+        <div class="stat"><strong id="count">20</strong> cases</div>
+        <div class="stat"><strong>8+</strong> mechanism families</div>
         <div class="stat">Public · fingerprint only</div>
       </div>
     </div>
   </header>
-
   <main>
     <section>
       <h3>Shared failure pattern</h3>
@@ -141,7 +62,6 @@
   + public or external egress
 → exposure</div>
     </section>
-
     <section>
       <h3>Cases</h3>
       <div class="toolbar">
@@ -149,57 +69,57 @@
         <select id="family">
           <option value="">Tutte le famiglie</option>
           <option value="screenshot">Screenshot / public host</option>
-          <option value="issue">GitHub issue injection</option>
+          <option value="issue">GitHub / issue injection</option>
+          <option value="email">Email injection</option>
           <option value="ci">CI agents</option>
-          <option value="ide">IDE sandbox / RCE</option>
+          <option value="ide">IDE sandbox / history</option>
           <option value="skill">Skills / repo poison</option>
           <option value="hosted">Hosted isolation</option>
+          <option value="mcp">MCP exposure</option>
+          <option value="research">Research class</option>
         </select>
       </div>
       <div class="grid" id="list"></div>
     </section>
-
     <section>
       <h3>Navigate the repo</h3>
       <p class="links">
         <a href="https://github.com/pamelazennaro87-creator/pixelleak-osint-public">GitHub</a>
         <a href="https://github.com/pamelazennaro87-creator/pixelleak-osint-public/blob/main/analysis/executive-brief.md">Executive brief</a>
         <a href="https://github.com/pamelazennaro87-creator/pixelleak-osint-public/blob/main/indexes/cases.csv">cases.csv</a>
-        <a href="https://github.com/pamelazennaro87-creator/pixelleak-osint-public/blob/main/analysis/mechanism-matrix.md">Mechanism matrix</a>
         <a href="https://github.com/pamelazennaro87-creator/pixelleak-osint-public/blob/main/SCOPE.md">SCOPE</a>
       </p>
     </section>
   </main>
-
   <footer>
-    <div class="wrap">
-      PixelLeak OSINT v2.2 · OSINT portfolio · not legal advice · cite primary researchers.
-    </div>
+    <div class="wrap">PixelLeak OSINT v2.3 · 20 cases · not legal advice · cite primary researchers.</div>
   </footer>
-
   <script>
     const cases = [
-      { id:"PL-2025-0001", title:"GitHub MCP toxic flow (Invariant)", status:"OBSERVED", family:"issue", tags:["mcp","issue-injection"], url:"https://invariantlabs.ai/blog/mcp-github-vulnerability", summary:"Public issue steers MCP agent into private repo data published publicly." },
-      { id:"PL-2025-0002", title:"Trail of Bits Copilot Agent", status:"OBSERVED", family:"issue", tags:["copilot","code-integrity"], url:"https://blog.trailofbits.com/2025/08/06/prompt-injection-engineering-for-attackers-exploiting-github-copilot/", summary:"Public issue assigned to Copilot Agent may yield attacker-influenced PR code." },
-      { id:"PL-2025-0003", title:"Devin injection series (Rehberger)", status:"OBSERVED", family:"issue", tags:["devin","async-agent"], url:"https://simonwillison.net/2025/Aug/15/the-summer-of-johann/", summary:"Async coding agent prompt injection, secret paths, port exposure class." },
-      { id:"PL-2026-0001", title:"PixelLeak (Glow)", status:"REPORTED", family:"screenshot", tags:["screenshots","gitshot"], url:"https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies", summary:"Agents host review screenshots on public GitHub; ~13k images / 300+ orgs claimed." },
+      { id:"PL-2025-0001", title:"GitHub MCP toxic flow (Invariant)", status:"OBSERVED", family:"issue", tags:["mcp","issue"], url:"https://invariantlabs.ai/blog/mcp-github-vulnerability", summary:"Public issue steers MCP agent into private repo data published publicly." },
+      { id:"PL-2025-0002", title:"Trail of Bits Copilot Agent", status:"OBSERVED", family:"issue", tags:["copilot"], url:"https://blog.trailofbits.com/2025/08/06/prompt-injection-engineering-for-attackers-exploiting-github-copilot/", summary:"Public issue assigned to Copilot Agent may yield attacker-influenced PR code." },
+      { id:"PL-2025-0003", title:"Devin injection series (Rehberger)", status:"OBSERVED", family:"issue", tags:["devin"], url:"https://simonwillison.net/2025/Aug/15/the-summer-of-johann/", summary:"Async coding agent prompt injection, secret paths, port exposure class." },
+      { id:"PL-2025-0004", title:"EchoLeak (M365 Copilot)", status:"OBSERVED", family:"email", tags:["email","cve","lethal-trifecta"], url:"https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/", summary:"Crafted email → Copilot context → zero-click style exfil class (CVE-2025-32711 reported)." },
+      { id:"PL-2026-0001", title:"PixelLeak (Glow)", status:"REPORTED", family:"screenshot", tags:["screenshots","gitshot"], url:"https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies", summary:"Agents host review screenshots on public GitHub; large-scale claims." },
       { id:"PL-2026-0002", title:"GitLost (Noma)", status:"OBSERVED", family:"issue", tags:["agentic-workflows"], url:"https://noma.security/noma-labs/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos", summary:"Public issue → Agentic Workflows → private content in public comment." },
-      { id:"PL-2026-0003", title:"RoguePilot (Orca)", status:"OBSERVED", family:"issue", tags:["codespaces","token"], url:"https://orca.security/resources/blog/roguepilot-github-copilot-vulnerability/", summary:"Issue → Copilot in Codespaces → privileged token path (research)." },
+      { id:"PL-2026-0003", title:"RoguePilot (Orca)", status:"OBSERVED", family:"issue", tags:["codespaces"], url:"https://orca.security/resources/blog/roguepilot-github-copilot-vulnerability/", summary:"Issue → Copilot in Codespaces → privileged token path (research)." },
       { id:"PL-2026-0004", title:"Claude Code GitHub Action class", status:"OBSERVED", family:"ci", tags:["ci","secrets"], url:"https://www.microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-agentic-world-claude-code-github-action-case/", summary:"Untrusted CI content steers agent toward runner environment secrets." },
-      { id:"PL-2026-0005", title:"Poisoned coding-test (Mitiga)", status:"OBSERVED", family:"skill", tags:["auto-run","repo-poison"], url:"https://www.mitiga.io/blog/poisoned-coding-test-ai-agent-attack", summary:"Malicious project instruction files drive auto-run cloud compromise demo." },
-      { id:"PL-2026-0006", title:"GitInject CI/CD study", status:"OBSERVED", family:"ci", tags:["multi-provider","arxiv"], url:"https://arxiv.org/abs/2606.09935", summary:"Live GitHub workflow evaluation; eleven attack classes across providers." },
-      { id:"PL-2026-0007", title:"DuneSlide (Cursor)", status:"OBSERVED", family:"ide", tags:["rce","sandbox"], url:"https://www.csoonline.com/article/4191923/sandbox-bypass-flaws-in-cursor-ide-highlight-prompt-injection-as-an-rce-vector.html", summary:"Prompt injection escapes Cursor sandbox to local RCE (reported fixed 3.0)." },
-      { id:"PL-2026-0008", title:"Manus shared-project injection", status:"OBSERVED", family:"hosted", tags:["multi-user","stored"], url:"https://codeant.ai/blogs/manus-prompt-injection-attack-ai-agent-security", summary:"Shared project instructions trusted across members; isolation failure." },
-      { id:"PL-2026-0009", title:"ToxicSkills class", status:"REPORTED", family:"skill", tags:["skills","supply-chain"], url:"https://www.mitiga.io/blog/malware-in-ai-instruction-files-skillgate", summary:"Malicious or unsafe agent skills as supply-chain implant class." },
-      { id:"PL-2026-0010", title:"AIShellJack study", status:"OBSERVED", family:"ide", tags:["empirical","copilot","cursor"], url:"https://arxiv.org/html/2509.22040", summary:"Large-scale empirical injection success rates on IDE agents." },
-      { id:"PL-2026-0011", title:"ChatGPT cross-account channel", status:"OBSERVED", family:"hosted", tags:["isolation","checkpoint"], url:"https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/", summary:"Covert channel between ChatGPT code-execution sandboxes." },
-      { id:"PL-2026-0012", title:"OpenAI agent / HF cluster", status:"REPORTED", family:"hosted", tags:["containment","autonomous"], url:"https://openai.com/index/hugging-face-incident-and-the-road-ahead/", summary:"Agent activity beyond intended containment; HF-related disclosures." }
+      { id:"PL-2026-0005", title:"Poisoned coding-test (Mitiga)", status:"OBSERVED", family:"skill", tags:["auto-run"], url:"https://www.mitiga.io/blog/poisoned-coding-test-ai-agent-attack", summary:"Malicious project instruction files drive auto-run cloud compromise demo." },
+      { id:"PL-2026-0006", title:"GitInject CI/CD study", status:"OBSERVED", family:"ci", tags:["arxiv"], url:"https://arxiv.org/abs/2606.09935", summary:"Live GitHub workflow evaluation; eleven attack classes across providers." },
+      { id:"PL-2026-0007", title:"DuneSlide (Cursor)", status:"OBSERVED", family:"ide", tags:["rce"], url:"https://www.csoonline.com/article/4191923/sandbox-bypass-flaws-in-cursor-ide-highlight-prompt-injection-as-an-rce-vector.html", summary:"Prompt injection escapes Cursor sandbox to local RCE." },
+      { id:"PL-2026-0008", title:"Manus shared-project injection", status:"OBSERVED", family:"hosted", tags:["multi-user"], url:"https://codeant.ai/blogs/manus-prompt-injection-attack-ai-agent-security", summary:"Shared project instructions trusted across members; isolation failure." },
+      { id:"PL-2026-0009", title:"ToxicSkills class", status:"REPORTED", family:"skill", tags:["skills"], url:"https://www.mitiga.io/blog/malware-in-ai-instruction-files-skillgate", summary:"Malicious or unsafe agent skills as supply-chain implant class." },
+      { id:"PL-2026-0010", title:"AIShellJack study", status:"OBSERVED", family:"ide", tags:["empirical"], url:"https://arxiv.org/html/2509.22040", summary:"Large-scale empirical injection success rates on IDE agents." },
+      { id:"PL-2026-0011", title:"ChatGPT cross-account channel", status:"OBSERVED", family:"hosted", tags:["isolation"], url:"https://research.checkpoint.com/2026/the-shared-clipboard-inside-the-sandbox-cross-account-data-leakage-in-chatgpt/", summary:"Covert channel between ChatGPT code-execution sandboxes." },
+      { id:"PL-2026-0012", title:"OpenAI agent / HF cluster", status:"REPORTED", family:"hosted", tags:["containment"], url:"https://openai.com/index/hugging-face-incident-and-the-road-ahead/", summary:"Agent activity beyond intended containment; HF-related disclosures." },
+      { id:"PL-2026-0013", title:"Agent Hijacks (Darktrace)", status:"OBSERVED", family:"ide", tags:["history-poison"], url:"https://www.darktrace.com/blog/hijacking-agentic-harnesses-to-attack-an-organization", summary:"Conversation history poisoning turns coding agents into autonomous attackers." },
+      { id:"PL-2026-0014", title:"Open MCP servers (Pluto)", status:"OBSERVED", family:"mcp", tags:["mcp","147"], url:"https://pluto.security/blog/wide-open-hundreds-of-mcps-exposing-root-shells-production-data-and-citizen-records-one-call-away/", summary:"147 unauthenticated MCP servers found on the public internet." },
+      { id:"PL-2026-0015", title:"MCP SDK OAuth (Cycode)", status:"OBSERVED", family:"mcp", tags:["oauth","sdk"], url:"https://cycode.com/blog/mcp-python-sdk-oauth-account-takeover/", summary:"Malicious MCP server can steal OAuth client material via Python SDK flaw." },
+      { id:"PL-2026-0016", title:"Explosive prompts (arXiv)", status:"OBSERVED", family:"research", tags:["delayed-trigger"], url:"https://arxiv.org/abs/2609.22510", summary:"Dormant conditional injections tested across nine production agents." }
     ];
-
     const list = document.getElementById("list");
     const q = document.getElementById("q");
     const family = document.getElementById("family");
-
     function render() {
       const query = (q.value || "").toLowerCase().trim();
       const fam = family.value;
@@ -210,21 +130,14 @@
         if (query && !hay.includes(query)) return;
         if (fam && c.family !== fam) return;
         n++;
+        const year = c.id.includes("2025") ? "2025" : "2026";
         const el = document.createElement("article");
         el.className = "card";
-        el.innerHTML = `
-          <div class="id">${c.id}</div>
-          <h2>${c.title}</h2>
-          <span class="status ${c.status}">${c.status}</span>
-          <div class="tags">${c.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
-          <p class="meta">${c.summary}</p>
-          <p><a href="${c.url}" target="_blank" rel="noopener">Primary source</a>
-          · <a href="https://github.com/pamelazennaro87-creator/pixelleak-osint-public/tree/main/cases/${c.id.startsWith("PL-2025") ? "2025" : "2026"}/${c.id}" target="_blank" rel="noopener">Case folder</a></p>`;
+        el.innerHTML = `<div class="id">${c.id}</div><h2>${c.title}</h2><span class="status ${c.status}">${c.status}</span><div class="tags">${c.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div><p class="meta">${c.summary}</p><p><a href="${c.url}" target="_blank" rel="noopener">Primary source</a> · <a href="https://github.com/pamelazennaro87-creator/pixelleak-osint-public/tree/main/cases/${year}/${c.id}" target="_blank" rel="noopener">Case folder</a></p>`;
         list.appendChild(el);
       });
       document.getElementById("count").textContent = String(n);
     }
-
     q.addEventListener("input", render);
     family.addEventListener("change", render);
     render();
