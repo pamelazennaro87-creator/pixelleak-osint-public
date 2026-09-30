@@ -1,19 +1,21 @@
 # PixelLeak OSINT — International dataset
 
-**Evidence-first OSINT knowledge base** on AI agents that expose data via GitHub, IDEs, CI, skills, and hosted sandboxes.
+**Evidence-first OSINT** on AI agents that expose data via GitHub, IDEs, CI, skills, and hosted sandboxes.
 
 > *Preserve the fingerprint, not the stolen payload.*
 
-**15 public cases · 2025–2026 · international research disclosures**
-
-No passwords, tokens, malware samples, or stolen dumps.
+**15 cases · 2025–2026 · structured CSV/graph · public sources only**
 
 ## Start here
 
-- **[`cases/INDEX.md`](cases/INDEX.md)** — full case list  
-- **[`analysis/mechanism-matrix.md`](analysis/mechanism-matrix.md)** — compare mechanisms  
-- **[`timeline/timeline.csv`](timeline/timeline.csv)** — chronology  
-- **[`sources/INDEX.md`](sources/INDEX.md)** — primary URLs  
+| Role | Link |
+|------|------|
+| **Executive / portfolio** | [`analysis/executive-brief.md`](analysis/executive-brief.md) |
+| **All cases** | [`cases/INDEX.md`](cases/INDEX.md) |
+| **Machine table** | [`indexes/cases.csv`](indexes/cases.csv) |
+| **Mechanisms** | [`analysis/mechanism-matrix.md`](analysis/mechanism-matrix.md) |
+| **Fingerprints** | [`indicators/indicators.csv`](indicators/indicators.csv) |
+| **Full map** | [`indexes/master-index.md`](indexes/master-index.md) |
 
 ## Case families
 
@@ -37,7 +39,7 @@ untrusted or unconstrained agent context
 
 ## Policy
 
-[`SCOPE.md`](SCOPE.md) · [`methodology/status-rules.md`](methodology/status-rules.md) · [`STATUS.md`](STATUS.md)
+[`SCOPE.md`](SCOPE.md) · [`STATUS.md`](STATUS.md) · [`methodology/`](methodology/)
 
 ---
-*Public international OSINT portfolio · v2.0*
+*v2.1 structured international OSINT portfolio*
