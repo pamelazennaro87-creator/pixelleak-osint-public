@@ -4,54 +4,71 @@
 
 > **Principle:** *Preserve the fingerprint, not the stolen payload.*
 
-This repository documents **public research disclosures**, mechanism patterns, and provenance links.  
-It does **not** store passwords, tokens, API keys, private keys, malware, or stolen data dumps.
+Public research disclosures, mechanism patterns, and provenance only.  
+**No** passwords, tokens, API keys, private keys, malware, or stolen dumps.
 
-## Why this exists
+## Quick start
 
-Between 2025–2026, multiple independent research teams showed the same structural failure:
+1. [`cases/INDEX.md`](cases/INDEX.md) — all 6 cases  
+2. [`analysis/mechanism-matrix.md`](analysis/mechanism-matrix.md) — compare mechanisms  
+3. [`sources/INDEX.md`](sources/INDEX.md) — 21 public sources  
+4. [`indexes/master-index.md`](indexes/master-index.md) — full map  
+
+## Cases
+
+| ID | Title | Mechanism |
+|----|-------|-----------|
+| [PL-2025-0001](cases/2025/PL-2025-0001/INFO.md) | GitHub MCP (Invariant) | Issue → MCP → private data → public PR |
+| [PL-2026-0001](cases/2026/PL-2026-0001/INFO.md) | **PixelLeak** | Screenshot workaround → public host |
+| [PL-2026-0002](cases/2026/PL-2026-0002/INFO.md) | GitLost (Noma) | Issue → Agentic Workflow → public comment |
+| [PL-2026-0003](cases/2026/PL-2026-0003/INFO.md) | RoguePilot (Orca) | Issue → Copilot Codespaces → token path |
+| [PL-2026-0004](cases/2026/PL-2026-0004/INFO.md) | Claude Code Action class | Issue/PR → CI agent → env secrets |
+| [PL-2026-0005](cases/2026/PL-2026-0005/INFO.md) | Poisoned coding-test (Mitiga) | Malicious repo files → auto-run agent |
+
+PixelLeak depth: [SUBCASES](cases/2026/PL-2026-0001/SUBCASES.md) · [CLAIMS](cases/2026/PL-2026-0001/CLAIMS-REGISTER.md)
+
+## Shared failure pattern
 
 ```text
 untrusted or unconstrained agent context
   + powerful tools / tokens
   + public or external egress
-→ data exposure
+→ exposure
 ```
 
-**PixelLeak** (Glow, Sep 2026) is the large-scale instance where agents hosted review screenshots on public repos because GitHub CLI cannot attach images to private PRs cleanly. Other cases use prompt injection via issues, MCP over-scope, or CI agent tools.
+## Repository layout
 
-## Cases (start here)
+```text
+cases/           incident cards
+sources/         public URL index
+timeline/        chronology CSV
+indicators/      technical fingerprints
+relationships/   suggested links
+analysis/        matrix + defensive checklist
+methodology/     status rules, schema, correlation design
+false-positives/ decision rules
+indexes/         master map
+SCOPE.md         boundaries
+STATUS.md        version
+```
 
-| ID | Title | Mechanism |
-|----|-------|-----------|
-| [PL-2025-0001](cases/2025/PL-2025-0001/INFO.md) | GitHub MCP toxic flow (Invariant) | Public issue → MCP agent → private data → public PR |
-| [PL-2026-0001](cases/2026/PL-2026-0001/INFO.md) | **PixelLeak** | Screenshot workaround → public image host |
-| [PL-2026-0002](cases/2026/PL-2026-0002/INFO.md) | GitLost (Noma) | Public issue → Agentic Workflow → public comment |
-| [PL-2026-0003](cases/2026/PL-2026-0003/INFO.md) | RoguePilot (Orca) | Issue → Copilot Codespaces → token path |
-| [PL-2026-0004](cases/2026/PL-2026-0004/INFO.md) | Claude Code GitHub Action class | Issue/PR → CI agent → env secrets |
-| [PL-2026-0005](cases/2026/PL-2026-0005/INFO.md) | Poisoned coding-test (Mitiga) | Malicious repo files → auto-run agent |
-
-Full index: [`cases/INDEX.md`](cases/INDEX.md)
-
-## Status taxonomy
+## Status labels
 
 | Status | Meaning |
 |--------|---------|
-| **REPORTED** | Claim from a source; not independently verified here |
-| **OBSERVED** | Public locator checked or primary disclosure reviewed |
-| **CONFIRMED** | Multiple independent public sources or direct technical verification of a non-sensitive fact |
+| REPORTED | Source claim, not independently verified here |
+| OBSERVED | Primary disclosure reviewed and/or public locator checked |
+| CONFIRMED | Multi-source or direct non-sensitive technical check |
 
-## What we keep / never keep
+Details: [`methodology/status-rules.md`](methodology/status-rules.md)
 
-See [`SCOPE.md`](SCOPE.md).
+## Defense
 
-## Primary public anchors
+[`analysis/defensive-checklist.md`](analysis/defensive-checklist.md)
 
-- Glow PixelLeak: https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies
-- The Register (PixelLeak): https://www.theregister.com/ai-and-ml/2026/09/29/ai-models-keep-posting-screenshots-showing-sensitive-data-from-inside-tech-companies/5299640
-- Invariant MCP: https://invariantlabs.ai/blog/mcp-github-vulnerability
-- Noma GitLost: https://noma.security/noma-labs/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos
-- Orca RoguePilot: https://orca.security/resources/blog/roguepilot-github-copilot-vulnerability/
+## Scope
+
+[`SCOPE.md`](SCOPE.md)
 
 ---
-*Public OSINT portfolio. Fingerprints only.*
+*Public OSINT portfolio · v1.1*
