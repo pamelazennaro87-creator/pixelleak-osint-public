@@ -1,11 +1,21 @@
 indicator_id,type,value,case_ids,status,notes
-IND-001,tool,gitshot,PL-2026-0001,OBSERVED,https://github.com/vipulgupta2048/gitshot — public-by-default image hosting
-IND-002,pattern,<user>/gitshot-images,PL-2026-0001,OBSERVED,Default personal public repo name pattern (tool docs)
-IND-003,pattern,_gitshot tag / release assets,PL-2026-0001,REPORTED,Glow; downloadable release-style assets
-IND-004,repo_path,sweeper-demo/pr-assets,PL-2026-0001,REMOVED,Lab locator 404 as of 2026-09-30
-IND-005,product,GitHub Agentic Workflows,PL-2026-0002,OBSERVED,Surface for GitLost
-IND-006,product,GitHub MCP server,PL-2025-0001,OBSERVED,https://invariantlabs.ai/blog/mcp-github-vulnerability
-IND-007,product,GitHub Copilot + Codespaces,PL-2026-0003,OBSERVED,RoguePilot chain surface
+IND-001,tool,gitshot,PL-2026-0001,OBSERVED,Public-by-default image hosting; https://github.com/vipulgupta2048/gitshot
+IND-002,pattern,<user>/gitshot-images,PL-2026-0001,OBSERVED,Default personal public repo name (tool docs)
+IND-003,pattern,_gitshot release-style assets,PL-2026-0001,REPORTED,Glow attribution
+IND-004,repo_path,sweeper-demo/pr-assets,PL-2026-0001,REMOVED,404 as of 2026-09-30
+IND-005,product,GitHub Agentic Workflows,PL-2026-0002,OBSERVED,GitLost surface
+IND-006,product,GitHub MCP server,PL-2025-0001,OBSERVED,Invariant toxic flow
+IND-007,product,GitHub Copilot + Codespaces,PL-2026-0003,OBSERVED,RoguePilot
 IND-008,product,anthropics/claude-code-action,PL-2026-0004,OBSERVED,CI agent action class
-IND-009,pattern,public issue body as agent instruction source,PL-2025-0001;PL-2026-0002;PL-2026-0003;PL-2026-0004,OBSERVED,Shared toxic input class
-IND-010,gap,No CLI image-attach API for private PR media,PL-2026-0001,OBSERVED,Root workaround driver (docs + research)
+IND-009,pattern,public issue body as agent instructions,PL-2025-0001;PL-2025-0002;PL-2026-0002;PL-2026-0003;PL-2026-0004,OBSERVED,Shared toxic input class
+IND-010,gap,No CLI image-attach API for private PR media,PL-2026-0001,OBSERVED,PixelLeak root workaround driver
+IND-011,framework,GitInject,PL-2026-0006,OBSERVED,https://arxiv.org/abs/2606.09935
+IND-012,product,Cursor IDE agent sandbox,PL-2026-0007;PL-2026-0010,OBSERVED,DuneSlide + empirical IDE studies
+IND-013,cve_class,CVE-2026-50548 / CVE-2026-50549,PL-2026-0007,REPORTED,DuneSlide as publicly reported
+IND-014,product,Manus shared-project instructions,PL-2026-0008,OBSERVED,Stored multi-user injection
+IND-015,pattern,CLAUDE.md / .cursor/rules as trusted context,PL-2026-0005;PL-2026-0009,OBSERVED,Repo/skill poison delivery
+IND-016,product,Devin async coding agent,PL-2025-0003,OBSERVED,Rehberger series
+IND-017,product,ChatGPT code-execution sandbox isolation,PL-2026-0011,OBSERVED,Check Point channel
+IND-018,cluster,OpenAI agent containment / HF activity,PL-2026-0012,REPORTED,OpenAI HF post
+IND-019,pattern,CI agent + secrets in runner env,PL-2026-0004;PL-2026-0006,OBSERVED,Structural CI+agent gap
+IND-020,pattern,lethal trifecta private+untrusted+egress,ALL,OBSERVED,Cross-case analytic frame
