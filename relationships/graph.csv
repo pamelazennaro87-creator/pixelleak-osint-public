@@ -1,12 +1,33 @@
 from_id,to_id,relation,review_state,notes
-PL-2026-0001,IND-001,uses_or_amplified_by,suggested,gitshot ~1/3 claim REPORTED
-PL-2026-0001,IND-010,caused_by_gap,observed,CLI/private image proxy limitation
-PL-2026-0002,IND-005,targets,observed,Agentic Workflows
-PL-2025-0001,IND-006,targets,observed,GitHub MCP
-PL-2026-0003,IND-007,targets,observed,Copilot Codespaces
-PL-2026-0004,IND-008,targets,observed,Claude Code Action
-PL-2025-0001,IND-009,shares_pattern,observed,issue-as-instruction
-PL-2026-0002,IND-009,shares_pattern,observed,issue-as-instruction
-PL-2026-0003,IND-009,shares_pattern,observed,issue-as-instruction
-PL-2026-0001,PL-2026-0002,same_family_different_mechanism,observed,agent+GitHub public surface
-PL-2026-0002,PL-2025-0001,same_family_different_mechanism,observed,prompt injection lineage
+PL-2026-0001,IND-001,amplified_by,accepted,tool default OBSERVED
+PL-2026-0001,IND-010,caused_by_gap,accepted,CLI image gap
+PL-2026-0001,IND-004,lab_locator,accepted,REMOVED
+PL-2026-0002,IND-005,targets,accepted,Agentic Workflows
+PL-2025-0001,IND-006,targets,accepted,GitHub MCP
+PL-2026-0003,IND-007,targets,accepted,Copilot Codespaces
+PL-2026-0004,IND-008,targets,accepted,Claude Code Action
+PL-2026-0006,IND-011,uses_framework,accepted,GitInject
+PL-2026-0007,IND-012,targets,accepted,Cursor sandbox
+PL-2026-0007,IND-013,tracked_as,suggested,CVE IDs from coverage
+PL-2026-0010,IND-012,studies,accepted,Empirical IDE
+PL-2026-0008,IND-014,targets,accepted,Manus
+PL-2026-0005,IND-015,delivery_via,accepted,Instruction files
+PL-2026-0009,IND-015,delivery_via,suggested,Skills class
+PL-2025-0003,IND-016,targets,accepted,Devin
+PL-2026-0011,IND-017,targets,accepted,ChatGPT sandbox
+PL-2026-0012,IND-018,cluster_of,suggested,Governance cluster
+PL-2026-0004,IND-019,shares_pattern,accepted,CI+secrets
+PL-2026-0006,IND-019,shares_pattern,accepted,CI+secrets
+PL-2025-0001,IND-009,shares_pattern,accepted,issue-as-instruction
+PL-2025-0002,IND-009,shares_pattern,accepted,issue-as-instruction
+PL-2026-0002,IND-009,shares_pattern,accepted,issue-as-instruction
+PL-2026-0003,IND-009,shares_pattern,accepted,issue-as-instruction
+PL-2026-0001,PL-2026-0002,same_family_different_mechanism,accepted,agent+GitHub
+PL-2026-0002,PL-2025-0001,same_family_different_mechanism,accepted,injection lineage
+PL-2026-0004,PL-2026-0006,same_family,accepted,CI agent class
+PL-2026-0005,PL-2026-0009,same_family,suggested,instruction/skill trust
+PL-2026-0007,PL-2026-0010,same_family,accepted,IDE agent class
+PL-2026-0008,PL-2026-0011,same_family,suggested,hosted isolation
+IND-020,PL-2026-0001,frames,accepted,lethal trifecta
+IND-020,PL-2026-0002,frames,accepted,lethal trifecta
+IND-020,PL-2025-0001,frames,accepted,lethal trifecta
