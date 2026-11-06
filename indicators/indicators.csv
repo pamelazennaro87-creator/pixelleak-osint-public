@@ -2,7 +2,7 @@ indicator_id,type,value,case_ids,status,notes
 IND-001,tool,gitshot,PL-2026-0001,OBSERVED,Public-by-default image hosting; https://github.com/vipulgupta2048/gitshot
 IND-002,pattern,<user>/gitshot-images,PL-2026-0001,OBSERVED,Default personal public repo name (tool docs)
 IND-003,pattern,_gitshot release-style assets,PL-2026-0001,REPORTED,Glow attribution
-IND-004,repo_path,sweeper-demo/pr-assets,PL-2026-0001,REMOVED,404 as of 2026-09-30
+IND-004,repo_path,sweeper-demo/pr-assets,PL-2026-0001,REPORTED_UNAVAILABLE,GitHub API returned 404 on 2026-09-30 and 2026-11-06; request-level unavailability only, not proof of permanent deletion (could also be private, renamed, or inaccessible).
 IND-005,product,GitHub Agentic Workflows,PL-2026-0002,OBSERVED,GitLost surface
 IND-006,product,GitHub MCP server,PL-2025-0001,OBSERVED,Invariant toxic flow
 IND-007,product,GitHub Copilot + Codespaces,PL-2026-0003,OBSERVED,RoguePilot
